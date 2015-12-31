@@ -1,5 +1,12 @@
 "use strict";
 
 $(document).ready(function () {
-    alert("loaded!");
+    var $messageContainer = $('#messageContainer');
+
+    //noinspection JSUnresolvedFunction
+    var evtSource = new EventSource("/sse");
+
+    evtSource.onmessage = function (e) {
+        $messageContainer.html(e.data);
+    }
 });

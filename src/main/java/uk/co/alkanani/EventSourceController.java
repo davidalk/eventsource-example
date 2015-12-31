@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 @EnableAutoConfiguration
 public class EventSourceController {
-    private static final long TIMEOUT = 200;
+    private static final int TIMEOUT = 200;
     private static final long SLEEP = 3000;
 
     @RequestMapping(path = "/sse", method = RequestMethod.GET)

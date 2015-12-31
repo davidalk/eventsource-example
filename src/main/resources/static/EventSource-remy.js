@@ -1,7 +1,5 @@
 ;(function (global) {
 
-if ("EventSource" in global) return;
-
 var reTrim = /^(\s|\u00A0)+|(\s|\u00A0)+$/g;
 
 var EventSource = function (url) {

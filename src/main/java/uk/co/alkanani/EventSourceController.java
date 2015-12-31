@@ -30,6 +30,7 @@ public class EventSourceController {
                     Thread.sleep(SLEEP);
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
+                    break;
                 }
             }
         };

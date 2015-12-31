@@ -18,7 +18,7 @@ public class EventSourceController {
     private static final long TIMEOUT = 200;
     private static final long SLEEP = 5000;
 
-    @RequestMapping(path="/", method = RequestMethod.GET)
+    @RequestMapping(path = "/sse", method = RequestMethod.GET)
     public SseEmitter get() {
         SseEmitter sseEmitter = new SseEmitter(TIMEOUT * SLEEP);
 

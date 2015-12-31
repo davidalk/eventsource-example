@@ -17,11 +17,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class EventSourceController {
     private static final long TIMEOUT = 200;
     private static final long SLEEP = 5000;
-    private SseEmitter sseEmitter;
 
     @RequestMapping(path="/", method = RequestMethod.GET)
     public SseEmitter get() {
-        sseEmitter = new SseEmitter(TIMEOUT * SLEEP);
+        SseEmitter sseEmitter = new SseEmitter(TIMEOUT * SLEEP);
 
         final AtomicInteger messageCount = new AtomicInteger(0);
         Runnable messageThread = () -> {

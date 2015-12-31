@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @EnableAutoConfiguration
 public class EventSourceController {
     private static final int TIMEOUT = 200;
-    private static final long SLEEP = 3000;
+    private static final long SLEEP = 100;
 
     @RequestMapping(path = "/sse", method = RequestMethod.GET)
     public SseEmitter get() {
@@ -32,6 +32,7 @@ public class EventSourceController {
                     e.printStackTrace();
                 }
             }
+            sseEmitter.complete();
         };
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
